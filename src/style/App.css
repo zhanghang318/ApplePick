@@ -1,0 +1,31 @@
+.App{width: 100%;margin-top: 200px;text-align: center;}
+.appleBusket{width: 400px;border: 1px solid #eee;padding: 15px;display: inline-block;}
+.main_box{border: 1px solid #eee;}
+.main_box .box_title{ color: #069;font-size: 20px;text-align: center;padding: 6px 0;}
+.main_box .box_con { border-top:1px dashed #ccc; padding: 8px 0;display: flex; border-bottom:1px dashed #ccc;}
+.main_box .box_con  .section{text-align: center;font-size: 18px;flex: 1;}
+.main_box .box_con  .section>p{ color: #069;}
+.box_con  .section .number{font-size: 22px;}
+.main_box .box_con  .current{border-right: 1px solid #eee;}
+.main_box .appleList {width: 84%;margin: 20px 8%;}
+.main_box .appleList ul {padding: 0;margin:0}
+.main_box .appleList li {width: 100%;display: flex;align-items: center;justify-content: space-between;border: 1px solid #999;border-radius: 4px;padding: 8px 0;margin-top: 5px;}
+.appleList li .left{margin-left: 20px;}
+.appleList li .left .name{color:#069;font-size: 20px;}
+.appleList li .left .weight{font-size: 18px;color: #333;}
+.appleList li .operation{margin-right: 20px;}
+.appleList li .operation span{display: inline-block;padding: 6px 15px;border-radius: 5px;background-color: #069;color:#fff;}
+.btn_box{text-align: center}
+.btn_box button{
+    color: #fff;
+    background-color: #096;
+    border: none;
+    font-size: 14px;
+    padding: 10px 40px;
+    border-radius: 6px;
+    margin: 20px auto;
+    outline: none;
+    transition: 0.3s all ease;
+}
+.btn_box  .isPick{background-color: #999}
+
