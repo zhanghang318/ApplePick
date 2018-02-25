@@ -39,8 +39,6 @@ export function appleReducer (state=initState,action){
                        ]
                    }
                case EATE_APPLE:
-                   console.log(action.index)
-                   console.log(state.appleList)
                    return {
                        newAppleId:state.newAppleId,
                        appleList:[

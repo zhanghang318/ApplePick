@@ -1,4 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+const propTypes = {
+    eatClick:PropTypes.func.isRequired,
+    isEaten:PropTypes.bool.isRequired,
+    weight:PropTypes.number.isRequired,
+    name:PropTypes.string.isRequired,
+    index:PropTypes.number.isRequired,
+}
 export default class AppList extends React.Component{
     constructor(){
         super();
@@ -8,6 +16,10 @@ export default class AppList extends React.Component{
         const {eatClick,index} = this.props
         eatClick(index)
     }
+    componentWillReceiveProps(nextProp){
+        console.log(nextProp)
+    }
+
     render(){
         const {name,weight,isEaten} = this.props
         return (
@@ -26,3 +38,4 @@ export default class AppList extends React.Component{
     }
 
 }
+AppList.propTypes=propTypes

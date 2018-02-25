@@ -20,14 +20,13 @@ export function eateApple(index){
         index
     }
 }
-
 export function AppleActionAll  (){
     return (dispatch,getState)=>{
         const {bool}  = getState()
         if(bool){
             return null;
         }
-            dispatch (beginPick(true))
+        dispatch (beginPick(true))
         let min = 200+Math.ceil(Math.random()*200)
         setTimeout(()=>{
             dispatch (donePick(min))

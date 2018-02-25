@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppList from './components/appleList'
 import {connect} from 'react-redux'
-import {donePick,beginPick,eateApple,AppleActionAll} from './action/action'
+import {eateApple,AppleActionAll} from './action/action'
 import './style/App.css'
 class App extends Component {
     constructor(){
@@ -16,13 +16,18 @@ class App extends Component {
         //     this.props.dispatch(beginPick(false))
         //     this.props.dispatch(donePick(min))
         // },2000)
-        this.props.dispatch(AppleActionAll())
+        if(this.props.isPick) {
+            return null
+        }
+        const {AppleActionAll} = this.props
+        AppleActionAll()
     }
     eatAppleClick(index){
-         this.props.dispatch(eateApple(index))
+        const {eateApple} = this.props
+         eateApple(index)
     }
   render() {
-      const {dispatch,isPick,appleList} = this.props
+      const {isPick,appleList} = this.props
       let appleItems = appleList.appleList
       let eateApple=0,elseAppleWeight=0,eateLength=0
       let appleComponent =appleItems.map((item,index)=>{
@@ -70,4 +75,7 @@ function mapStateToProps(state){
         appleList:state.appleReducer
     }
 }
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps,{
+    AppleActionAll,
+    eateApple
+})(App);
